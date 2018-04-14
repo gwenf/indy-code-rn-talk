@@ -1,0 +1,7 @@
+<div>
+  <h1>Hello App!</h1>
+</div>
+
+<View>
+  <Text>Hello App!</Text>
+</View>
