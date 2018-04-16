@@ -319,7 +319,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary" textColor="primary"
-          notes="Often overlooked. React Native has brought some awesome features from web development to the mobile realm."
+          notes=""
         >
           <Heading size={4} textColor="tertiary" caps>Flexibility</Heading>
         </Slide>
@@ -338,6 +338,21 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={6} textColor="secondary" caps>Over the Air Updates</Heading>
           <Text>Microsoft Code Push</Text>
+          <Image width="740px" src={images.bridge} />
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary" textColor="primary"
+          notes="Great community, lots of companies developing this."
+        >
+          <Heading size={4} textColor="tertiary" caps>Tools</Heading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary">
+          <Heading size={6} textColor="secondary" caps>Deco</Heading>
+          <Image width="740px" src={images.bridge} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary">
+          <Heading size={6} textColor="secondary" caps>Plugins</Heading>
+          <Text>VSCode, Sublime, Atom</Text>
           <Image width="740px" src={images.bridge} />
         </Slide>
 
