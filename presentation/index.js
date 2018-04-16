@@ -185,7 +185,7 @@ export default class Presentation extends React.Component {
           {/* <Text textColor="tertiary">Code Sharing</Text>
           <Image width="500px" src={images.logo} /> */}
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+        <Slide transition={["slide"]} bgColor="primary" textColor="primary"
           notes="Let's talk about... basically this is time and cost savings."
         >
           <Heading size={4} textColor="secondary" caps>Code Sharing &</Heading>
@@ -262,6 +262,13 @@ export default class Presentation extends React.Component {
           <Heading size={4} textColor="secondary" caps>Datetime Pickers</Heading>
           <Image width="550px" src={images.datetime} />
         </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary" textColor="primary"
+          notes="Often overlooked. React Native has brought some awesome features from web development to the mobile realm."
+        >
+          <Heading size={4} textColor="tertiary" caps>Performance</Heading>
+          <Text size={4} textColor="tertiary" caps>Navigation, Animcations, and User Interactions</Text>
+        </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={4} textColor="secondary" caps>React Native Bridge</Heading>
           <Image width="740px" src={images.bridge} />
@@ -275,6 +282,12 @@ export default class Presentation extends React.Component {
         >
           <Heading size={4} textColor="secondary" caps>List Views</Heading>
           <Image width="740px" src={images.bridge} />
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary" textColor="primary"
+          notes="Often overlooked. React Native has brought some awesome features from web development to the mobile realm."
+        >
+          <Heading size={4} textColor="tertiary" caps>Coding and Developer Experience</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary"
           notes=""
@@ -304,6 +317,12 @@ export default class Presentation extends React.Component {
           <Heading size={4} textColor="secondary" caps>Debugging</Heading>
           <Image width="740px" src={images.bridge} />
         </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary" textColor="primary"
+          notes="Often overlooked. React Native has brought some awesome features from web development to the mobile realm."
+        >
+          <Heading size={4} textColor="tertiary" caps>Flexibility</Heading>
+        </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={4} textColor="secondary" caps>Embedding Native Code</Heading>
           <Image width="740px" src={images.bridge} />
@@ -320,6 +339,12 @@ export default class Presentation extends React.Component {
           <Heading size={6} textColor="secondary" caps>Over the Air Updates</Heading>
           <Text>Microsoft Code Push</Text>
           <Image width="740px" src={images.bridge} />
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary" textColor="primary"
+          notes="Great community, lots of companies developing this."
+        >
+          <Heading size={4} textColor="tertiary" caps>Community</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={6} textColor="secondary" caps>Who is using React Native?</Heading>
