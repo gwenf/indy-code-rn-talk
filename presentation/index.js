@@ -13,7 +13,11 @@ import {
   Slide,
   Text,
   Image,
-  CodePane
+  Code,
+  CodePane,
+  Layout,
+  Fill,
+  Appear
 } from "spectacle";
 
 const preloader = (imageCollection) => {
@@ -29,7 +33,10 @@ const images = {
   iOSvAndroidTabs: require('../assets/ios-v-android-tabs.png'),
   iOSvAndroid: require('../assets/ios-v-android.png'),
   datetime: require('../assets/datetime-picker.png'),
-  bridge: require('../assets/bridge.png')
+  bridge: require('../assets/bridge.png'),
+  mobiledev: require('../assets/mobiledev.png'),
+  expo: require('../assets/expo.png'),
+  styling: require('../assets/styling.png')
 };
 
 preloader(images);
@@ -71,7 +78,9 @@ export default class Presentation extends React.Component {
           <Heading size={5} textColor="secondary">Heading 5</Heading>
           <Text size={6} textColor="secondary">Standard text</Text>
         </Slide> */}
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary"
+          notes="talk about itinerary here, as well as my background in mobile development."
+        >
           <Heading size={3} textColor="secondary" caps>Gwen Faraday</Heading>
           <List>
             <ListItem textColor="secondary">Fusion Alliance</ListItem>
@@ -81,18 +90,99 @@ export default class Presentation extends React.Component {
             <ListItem>gwenfaraday@gmail.com</ListItem>
           </List>
         </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary"
+          notes="talk about itinerary here, as well as my background in mobile development."
+        >
+          <Heading size={3} textColor="tertiary" caps>Itinerary</Heading>
+          <List>
+            <ListItem textColor="secondary">Introduce React Native</ListItem>
+            <ListItem textColor="secondary">Benefits and Use Cases</ListItem>
+            <ListItem textColor="secondary">Questions</ListItem>
+          </List>
+        </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary"
-          notes=""
+          notes="On the most basic level... so why would you chose React Native..."
         >
           <Heading size={4} textColor="secondary" caps>What is React Native?</Heading>
           <Text margin="10px 0 0" textColor="primary">
             Cross-platform mobile apps in JavaScript
           </Text>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="primary">
-          <Heading size={4} textColor="secondary" caps>iOS & Android</Heading>
-          <Text textColor="tertiary">Code Sharing</Text>
-          <Image width="500px" src={images.logo} />
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="well, why would you choose any mobile framework? You would probably come up with some of the things on this list."
+        >
+          <Heading size={4} textColor="tertiary" caps>Mobile Considerations</Heading>
+          <Layout>
+            <Fill>
+              <List>
+                <ListItem textColor="secondary">Time</ListItem>
+                <ListItem textColor="secondary">Cost</ListItem>
+                <ListItem textColor="secondary">Maintainability</ListItem>
+                <ListItem textColor="secondary">Scalability</ListItem>
+                <ListItem textColor="secondary">Performance</ListItem>
+                <ListItem textColor="secondary">Ecosystem</ListItem>
+              </List>
+            </Fill>
+            <Fill>
+              <List>
+                <ListItem textColor="secondary">Community</ListItem>
+                <ListItem textColor="secondary">Other Applications</ListItem>
+                <ListItem textColor="secondary">Developer Skillsets</ListItem>
+                <ListItem textColor="secondary">Deploying</ListItem>
+                <ListItem textColor="secondary">Testing</ListItem>
+              </List>
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes=""
+        >
+          <Heading size={4} textColor="tertiary" caps>Solutions</Heading>
+          <Image width="700px" src={images.mobiledev} />
+          {/* <List>
+            <ListItem textColor="secondary">Native Mobile</ListItem>
+            <ListItem textColor="secondary">Hybrid Webview</ListItem>
+            <ListItem textColor="secondary">Hybrid Native</ListItem>
+          </List> */}
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes=""
+        >
+          <Heading size={4} textColor="tertiary" caps>Native</Heading>
+          <List>
+            <ListItem textColor="secondary">Great UX</ListItem>
+            <ListItem textColor="secondary">Native Feel</ListItem>
+            <ListItem textColor="secondary">Costly</ListItem>
+            <ListItem textColor="secondary">Longer Dev Cycle</ListItem>
+            <ListItem textColor="secondary">Separate Codebases</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="Hybrid came about as an easier, quicker way to develop mobile apps. This includes Cordova, jQuery Mobile, Ionic... Large companies like Facebook actually came on board to try this out and failed..."
+        >
+          <Heading size={4} textColor="tertiary" caps>Hybrid Webview</Heading>
+          <List>
+            <ListItem textColor="secondary">Cheaper</ListItem>
+            <ListItem textColor="secondary">Quicker</ListItem>
+            <ListItem textColor="secondary">Code Sharing</ListItem>
+            <ListItem textColor="secondary">Poor Performance</ListItem>
+            <ListItem textColor="secondary">Non-native UI</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="The idea of RN is to have an app look and feel native, while being able to get the benefits from traditional cross-platform systems."
+        >
+          <Heading size={4} textColor="tertiary" caps>React Native</Heading>
+          <List>
+            <ListItem textColor="secondary">Fast Developer Iteration</ListItem>
+            <ListItem textColor="secondary">Cross-platform code sharing</ListItem>
+            <ListItem textColor="secondary">Native Views</ListItem>
+            <ListItem textColor="secondary">Performance</ListItem>
+            <ListItem textColor="secondary">Built in developers tools</ListItem>
+            <ListItem textColor="secondary">Re-use web skills</ListItem>
+          </List>
+          {/* <Text textColor="tertiary">Code Sharing</Text>
+          <Image width="500px" src={images.logo} /> */}
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           {/* the app is made up of composable components that are separated by feature, putting like with like */}
@@ -148,6 +238,37 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={4} textColor="secondary" caps>React Native Bridge</Heading>
           <Image width="740px" src={images.bridge} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary">
+          <Heading size={4} textColor="secondary" caps>Performance</Heading>
+          <Image width="740px" src={images.bridge} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="the native SDK’s for both operating systems, exist time-tested native list view implementations — UITableView for iOS and ListView for Android"
+        >
+          <Heading size={4} textColor="secondary" caps>List Views</Heading>
+          <Image width="740px" src={images.bridge} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes=""
+        >
+          <Heading size={4} textColor="secondary" caps>How to Get Started</Heading>
+          <List ordered>
+            <Appear><ListItem textColor="secondary">Install Xcode, Android Studio, <Code>react-native init</Code></ListItem></Appear>
+            <Appear><ListItem textColor="secondary">snack.expo.io</ListItem></Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="Snack.expo.io"
+        >
+          <Heading size={4} textColor="secondary" caps>snack.expo.io</Heading>
+          <Image width="740px" src={images.expo} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="Snack.expo.io"
+        >
+          <Heading size={4} textColor="secondary" caps>Styling</Heading>
+          <Image width="450px" src={images.styling} />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={4} textColor="secondary" caps>React Developer Tools</Heading>
@@ -210,7 +331,7 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={3} textColor="secondary" caps>Gwen Faraday</Heading>
+          <Heading size={3} textColor="secondary" caps>Thanks!</Heading>
           <List>
             <ListItem textColor="secondary">Fusion Alliance</ListItem>
             <ListItem textColor="secondary">freeCodeCampIndy</ListItem>
