@@ -184,12 +184,22 @@ export default class Presentation extends React.Component {
           {/* <Text textColor="tertiary">Code Sharing</Text>
           <Image width="500px" src={images.logo} /> */}
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="primary">
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="Let's talk about... basically this is time and cost savings."
+        >
+          <Heading size={4} textColor="secondary" caps>Code Sharing &</Heading>
+          <Heading size={4} textColor="tertiary" caps>Skillset Reuse</Heading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="How does this work? Broken down by feature. Helps with maintainability of code."
+        >
           {/* the app is made up of composable components that are separated by feature, putting like with like */}
           <Heading size={4} textColor="secondary" caps>React Paradigm</Heading>
           <Image width="900px" src={images.reactTree} />
         </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary"
+          notes="there is not longer separation of concerns but separation of features. The view and the logic that deal with that view are grouped together."
+        >
           <Heading size={4} textColor="tertiary" caps>React</Heading>
           <CodePane
             lang="jsx"
@@ -199,7 +209,9 @@ export default class Presentation extends React.Component {
             overflow="overflow"
           />
         </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary"
+          notes="React Native follows the same paradigm. In fact it was the intention to be able to learn once and build everywhere. Logic can be reused exactly as it from the web and so can everything else except the view."
+        >
           <Heading size={4} textColor="tertiary" caps>React Native</Heading>
           <CodePane
             lang="jsx"
@@ -209,7 +221,9 @@ export default class Presentation extends React.Component {
             overflow="overflow"
           />
         </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary"
+          notes="just as you have on the web, React Native uses tags corrosponding to containers, text wrappers, buttons, etc. These from the RN api actually map to native UI components in Android and iOS. It's not JS and CSS just made to look like a mobile app. It's just declaritive."
+         >
           <Heading size={4} textColor="tertiary" caps>JSX</Heading>
           <CodePane
             lang="jsx"
@@ -218,6 +232,18 @@ export default class Presentation extends React.Component {
             style={{fontSize: "22px"}}
             overflow="overflow"
           />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="many things are familiar from the web"
+        >
+          <Heading size={4} textColor="secondary" caps>Styling</Heading>
+          <Image width="450px" src={images.styling} />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="One Codebase for both platforms, but different looking UIs? How does that work?"
+        >
+          <Heading size={4} textColor="tertiary" caps>Cross Platform UI</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary"
           notes=""
@@ -264,12 +290,7 @@ export default class Presentation extends React.Component {
           <Heading size={4} textColor="secondary" caps>snack.expo.io</Heading>
           <Image width="740px" src={images.expo} />
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
-          notes="Snack.expo.io"
-        >
-          <Heading size={4} textColor="secondary" caps>Styling</Heading>
-          <Image width="450px" src={images.styling} />
-        </Slide>
+        
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={4} textColor="secondary" caps>React Developer Tools</Heading>
           <Image width="740px" src={images.bridge} />
