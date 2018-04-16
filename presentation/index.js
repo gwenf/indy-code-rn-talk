@@ -125,6 +125,7 @@ export default class Presentation extends React.Component {
             </Fill>
             <Fill>
               <List>
+                <ListItem textColor="secondary">Developer Experience</ListItem>
                 <ListItem textColor="secondary">Community</ListItem>
                 <ListItem textColor="secondary">Other Applications</ListItem>
                 <ListItem textColor="secondary">Developer Skillsets</ListItem>
