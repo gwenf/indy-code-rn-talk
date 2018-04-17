@@ -45,7 +45,8 @@ const images = {
   native_base: require('../assets/native_base.png'),
   devtools: require('../assets/rn-devtools.gif'),
   devmenu: require('../assets/devmenu.png'),
-  inspector: require('../assets/inspector.png')
+  inspector: require('../assets/inspector.png'),
+  decoide: require('../assets/decoide.png')
 };
 
 preloader(images);
@@ -451,8 +452,8 @@ export default class Presentation extends React.Component {
           <Heading size={4} textColor="tertiary" caps>Tools</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
-          <Heading size={6} textColor="secondary" caps>Deco</Heading>
-          <Image width="740px" src={images.bridge} />
+          <Heading size={6} textColor="tertiary" caps>Deco</Heading>
+          <Image width="740px" src={images.decoide} />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={6} textColor="secondary" caps>Plugins</Heading>
