@@ -1,0 +1,13 @@
+// src/fonts
+Frijole-Regular.ttf
+LuckiestGuy.ttf
+
+// package.json
+"rnpm": {
+  "assets": [
+    "src/fonts"
+  ]
+}
+
+// run command
+react-native link
