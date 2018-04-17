@@ -466,11 +466,24 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary"
           notes="it makes it easy to embed other peoples native code. And you end up doing this a lot with lots of libraries being open sourced by large companies."
         >
-          <Heading size={6} textColor="primary" caps>Embed native code</Heading>
-          <Text textColor="tertiary">React Native Link</Text>
+          <Heading size={6} textColor="primary" caps>React Native Link</Heading>
+          <Text textColor="tertiary">Native Modules</Text>
           <CodePane
             lang="jsx"
             source={require('raw-loader!../assets/rnLink.txt')}
+            margin="20px 20px"
+            style={{fontSize: "22px"}}
+            overflow="overflow"
+          />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary"
+          notes="it makes it easy to embed other peoples native code. And you end up doing this a lot with lots of libraries being open sourced by large companies."
+        >
+          <Heading size={6} textColor="primary" caps>React Native Link</Heading>
+          <Text textColor="tertiary">Fonts</Text>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/rnLink2.txt')}
             margin="20px 20px"
             style={{fontSize: "22px"}}
             overflow="overflow"
