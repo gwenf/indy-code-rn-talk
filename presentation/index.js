@@ -37,6 +37,7 @@ const images = {
   bridge: require('../assets/bridge.png'),
   mobiledev: require('../assets/mobiledev.png'),
   expo: require('../assets/expo.png'),
+  expo_qr: require('../assets/expo_qr.png'),
   styling: require('../assets/styling.png'),
   flexbox_layout: require('../assets/flexbox_layout.png'),
   rnFileTree: require('../assets/rnFileTree.png'),
@@ -45,7 +46,8 @@ const images = {
   native_base: require('../assets/native_base.png'),
   devtools: require('../assets/rn-devtools.gif'),
   devmenu: require('../assets/devmenu.png'),
-  inspector: require('../assets/inspector.png')
+  inspector: require('../assets/inspector.png'),
+  chrome_debug: require('../assets/chrome_debug.png')
 };
 
 preloader(images);
@@ -352,7 +354,7 @@ export default class Presentation extends React.Component {
           <Text size={4} textColor="secondary" caps>Navigation, Animations, and User Interactions</Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary"
-          notes="The ideal situation is to eliminate all the passes over the bridge after initialization."
+          notes="The ideal situation is to eliminate all the passes over the bridge after initialization. So the JS code you write will be compiled into an asset and shipped with the native binary as well as the JavaScript core engine which it runs on. Libraries and API will be mixed JavaScript and Native."
         >
           <Heading size={4} textColor="secondary" caps>React Native Bridge</Heading>
           <Image width="740px" src={images.bridge} />
@@ -388,6 +390,12 @@ export default class Presentation extends React.Component {
           <Heading size={4} textColor="secondary" caps>snack.expo.io</Heading>
           <Image width="740px" src={images.expo} />
         </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="Snack.expo.io makes it so easy to prototype or get started. It also gives you a qr code to scan on your devices and it live updates. I use this to be able to prototype easily on multiple devices at the same time."
+        >
+          <Heading size={4} textColor="secondary" caps>snack.expo.io</Heading>
+          <Image width="740px" src={images.expo_qr} />
+        </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary"
           notes="If you are running locally, there are also a lot of sweet features for building your apps. Chrome dev tools, hot/live reloading, inspect element features, performance monitoring for JS and Native."
         >
@@ -411,15 +419,15 @@ export default class Presentation extends React.Component {
             overflow="overflow"
           />
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="primary">
-          <Heading size={4} textColor="secondary" caps>React Developer Tools</Heading>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={4} textColor="tertiary" caps>React Developer Tools</Heading>
           <Image width="740px" src={images.devtools} />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary"
           notes="set breakpoints, step through debugging..."
         >
           <Heading size={4} textColor="secondary" caps>Debugging</Heading>
-          
+          <Image width="740px" src={images.chrome_debug} />
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary" textColor="primary"
@@ -427,17 +435,57 @@ export default class Presentation extends React.Component {
         >
           <Heading size={1} textColor="tertiary" caps>Flexibility</Heading>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="primary">
-          <Heading size={4} textColor="secondary" caps>Embedding Native Code</Heading>
-          <Image width="740px" src={images.bridge} />
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <Heading size={4} textColor="primary" caps>Platform Customization</Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/platformCustom.txt')}
+            margin="20px 20px"
+            style={{fontSize: "22px"}}
+            overflow="overflow"
+          />
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/platformCustom2.txt')}
+            margin="20px 20px"
+            style={{fontSize: "22px"}}
+            overflow="overflow"
+          />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
-          <Heading size={6} textColor="secondary" caps>Embed other people's native code - React Native Link</Heading>
-          <Image width="740px" src={images.bridge} />
+          <Heading size={4} textColor="tertiary" caps>Embed Native Code</Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/nativeCode.txt')}
+            margin="20px 20px"
+            style={{fontSize: "22px"}}
+            overflow="overflow"
+          />
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="primary">
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary"
+          notes="it makes it easy to embed other peoples native code. And you end up doing this a lot with lots of libraries being open sourced by large companies."
+        >
+          <Heading size={6} textColor="primary" caps>Embed native code</Heading>
+          <Text textColor="tertiary">React Native Link</Text>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/rnLink.txt')}
+            margin="20px 20px"
+            style={{fontSize: "22px"}}
+            overflow="overflow"
+          />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="you can also use it to wrap a webview."
+        >
           <Heading size={6} textColor="secondary" caps>Transitioning from a mobile friendly web app?</Heading>
-          <Image width="740px" src={images.bridge} />
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/webview.txt')}
+            margin="20px 20px"
+            style={{fontSize: "22px"}}
+            overflow="overflow"
+          />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={6} textColor="secondary" caps>Over the Air Updates</Heading>

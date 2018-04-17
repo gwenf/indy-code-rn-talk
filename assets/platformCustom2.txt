@@ -1,0 +1,4 @@
+// Home.ios.js
+// Home.android.js
+
+import Home from 'Home';
