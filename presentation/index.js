@@ -543,27 +543,28 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={6} textColor="secondary" caps>Resource Links</Heading>
           <List>
-            <ListItem style={{fontSize: '32px'}} textColor="secondary">React Native Elements</ListItem>
-            <ListItem style={{fontSize: '32px'}} textColor="secondary">Styled Components</ListItem>
-            <ListItem style={{fontSize: '32px'}} textColor="secondary">Browser-based development - Expo Sketch</ListItem>
-            <ListItem style={{fontSize: '32px'}} textColor="secondary">Flexbox Games - Froggies and Tower Defense</ListItem>
-            <ListItem style={{fontSize: '32px'}} textColor="secondary">React Native styling practice with Katas!</ListItem>
+            <ListItem style={{fontSize: '32px'}} textColor="secondary"><Link href="https://react-native-training.github.io/react-native-elements/">React Native Elements</Link></ListItem>
+            <ListItem style={{fontSize: '32px'}} textColor="secondary"><Link href="https://nativebase.io/">Native Base</Link></ListItem>
+            <ListItem style={{fontSize: '32px'}} textColor="secondary"><Link href="https://akveo.github.io/react-native-ui-kitten/#/home">UI Kitten</Link></ListItem>
+            <ListItem style={{fontSize: '32px'}} textColor="secondary"><Link href="https://snack.expo.io/">Browser-based development - Expo Sketch</Link></ListItem>
+            <ListItem style={{fontSize: '32px'}} textColor="secondary">Flexbox Games - <Link href="https://flexboxfroggy.com/">Froggies</Link> and <Link href="http://www.flexboxdefense.com/">Tower Defense</Link></ListItem>
+            <ListItem style={{fontSize: '32px'}} textColor="secondary"><Link href="https://github.com/jondot/ReactNativeKatas">Learn React Native with Katas!</Link></ListItem>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={6} textColor="secondary" caps>Up-to-date Information</Heading>
           <List>
-            <ListItem textColor="secondary">Facebook Developers Channel</ListItem>
-            <ListItem textColor="secondary">Tal Kol - Engineer at Wix</ListItem>
-            <ListItem textColor="secondary">React Native Newsletter</ListItem>
+            <ListItem textColor="secondary"><Link href="https://www.youtube.com/user/FacebookDevelopers/videos">Facebook Developers Channel</Link></ListItem>
+            <ListItem textColor="secondary"><Link href="https://twitter.com/koltal">Tal Kol - Engineer at Wix</Link></ListItem>
+            <ListItem textColor="secondary"><Link href="http://reactnative.cc/">React Native Newsletter</Link></ListItem>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={3} textColor="secondary" caps>Thanks!</Heading>
           <List>
             <ListItem textColor="secondary">Fusion Alliance</ListItem>
-            <ListItem textColor="secondary">freeCodeCampIndy</ListItem>
-            <ListItem textColor="secondary">Indianapolis Blockchain Developers</ListItem>
+            <ListItem textColor="secondary"><Link href="https://www.meetup.com/Free-Code-Camp-Indy">freeCodeCampIndy</Link></ListItem>
+            <ListItem textColor="secondary"><Link href="https://www.meetup.com/Indianapolis-Blockchain-Developers">Indianapolis Blockchain Developers</Link></ListItem>
             <ListItem>@gwen_faraday</ListItem>
             <ListItem>gwenfaraday@gmail.com</ListItem>
           </List>
