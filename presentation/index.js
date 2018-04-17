@@ -9,6 +9,7 @@ import {
   Heading,
   ListItem,
   List,
+  Link,
   Quote,
   Slide,
   Text,
@@ -36,7 +37,15 @@ const images = {
   bridge: require('../assets/bridge.png'),
   mobiledev: require('../assets/mobiledev.png'),
   expo: require('../assets/expo.png'),
-  styling: require('../assets/styling.png')
+  styling: require('../assets/styling.png'),
+  flexbox_layout: require('../assets/flexbox_layout.png'),
+  rnFileTree: require('../assets/rnFileTree.png'),
+  ui_kitten: require('../assets/ui_kitten.png'),
+  rn_elements: require('../assets/rn_elements.png'),
+  native_base: require('../assets/native_base.png'),
+  devtools: require('../assets/rn-devtools.gif'),
+  devmenu: require('../assets/devmenu.png'),
+  inspector: require('../assets/inspector.png')
 };
 
 preloader(images);
@@ -166,12 +175,13 @@ export default class Presentation extends React.Component {
             <ListItem textColor="secondary">Cheaper</ListItem>
             <ListItem textColor="secondary">Quicker</ListItem>
             <ListItem textColor="secondary">Code Sharing</ListItem>
+            <ListItem textColor="secondary">Re-use skills from Web</ListItem>
             <ListItem textColor="secondary">Poor Performance</ListItem>
             <ListItem textColor="secondary">Non-native UI</ListItem>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary"
-          notes="The idea of RN is to have an app look and feel native, while being able to get the benefits from traditional cross-platform systems."
+          notes="This 3rd category has existed since Facebook open sourced RN in 2015. The idea of RN is to have an app look and feel native, while being able to get the benefits from traditional cross-platform systems."
         >
           <Heading size={4} textColor="tertiary" caps>React Native</Heading>
           <List>
@@ -186,20 +196,25 @@ export default class Presentation extends React.Component {
           <Image width="500px" src={images.logo} /> */}
         </Slide>
         <Slide transition={["slide"]} bgColor="primary" textColor="primary"
-          notes="Let's talk about... basically this is time and cost savings."
+          notes="I'm going to talk about about the features of RN one by one starting with this... Basically this is time and cost savings."
         >
-          <Heading size={4} textColor="secondary" caps>Code Sharing &</Heading>
-          <Heading size={4} textColor="tertiary" caps>Skillset Reuse</Heading>
+          <Heading size={2} textColor="secondary" caps>Code Sharing &</Heading>
+          <Heading size={2} textColor="tertiary" caps>Skillset Reuse</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary"
-          notes="How does this work? Broken down by feature. Helps with maintainability of code."
+          notes=""
         >
-          {/* the app is made up of composable components that are separated by feature, putting like with like */}
+          <Heading size={4} textColor="tertiary" caps>React Native Project</Heading>
+          <Image width="300px" src={images.rnFileTree} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="How does this work? A React app is made up of composable components that are separated by feature, putting like with like, which also helps with maintainability of code."
+        >
           <Heading size={4} textColor="secondary" caps>React Paradigm</Heading>
           <Image width="900px" src={images.reactTree} />
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary"
-          notes="there is not longer separation of concerns but separation of features. The view and the logic that deal with that view are grouped together."
+          notes="there is not longer separation of concerns but separation of features. The view and the logic that deal with that view are grouped together. Since I've been working with it for a while, I find it to be a logical way to group things."
         >
           <Heading size={4} textColor="tertiary" caps>React</Heading>
           <CodePane
@@ -211,7 +226,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary"
-          notes="React Native follows the same paradigm. In fact it was the intention to be able to learn once and build everywhere. Logic can be reused exactly as it from the web and so can everything else except the view."
+          notes="React Native follows the same paradigm. In fact it was the intention to be able to learn it once and build it on any platform of your choosing. Logic can be reused exactly as it from the web and so can everything else except the view."
         >
           <Heading size={4} textColor="tertiary" caps>React Native</Heading>
           <CodePane
@@ -235,10 +250,77 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary"
-          notes="many things are familiar from the web"
+          notes=""
         >
-          <Heading size={4} textColor="secondary" caps>Styling</Heading>
-          <Image width="450px" src={images.styling} />
+          <Heading size={4} textColor="tertiary" caps>Styling</Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/styling.txt')}
+            margin="20px auto"
+            style={{fontSize: "18px"}}
+            overflow="overflow"
+          />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="RN uses flexbox as an intuitive simple API for creating layouts. It also has an option for absolute positioning. If you remember anything of the old tables or floats on the web, this is 10K times better. You can also use standard web styles."
+        >
+          <Heading size={4} textColor="tertiary" caps>Styling</Heading>
+          <Layout>
+            <Fill>
+              <Image width="270px" src={images.flexbox_layout} />
+            </Fill>
+            <Fill>
+              <Appear>
+                <CodePane
+                  lang="jsx"
+                  source={require('raw-loader!../assets/styling2.txt')}
+                  margin="20px 20px"
+                  style={{fontSize: "22px"}}
+                  overflow="overflow"
+                />
+              </Appear>
+              <Appear>
+                <CodePane
+                  lang="jsx"
+                  source={require('raw-loader!../assets/styling3.txt')}
+                  margin="20px 20px"
+                  style={{fontSize: "22px"}}
+                  overflow="overflow"
+                />
+              </Appear>
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="styling is a bit different because you don't have separate css or sass files. Instead you put styles in with your JavaScript code... before you start thinking how messy that would be, generally, you will have various wrapper components that handle styling and can be imported."
+        >
+          <Heading size={5} textColor="tertiary" caps>Styling-specific Components</Heading>
+          <Image width="400px" src={images.styling} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="another nice thing to note is that, just like with the web, there are several good, well-maintained design framework solutions in RN."
+        >
+          <Heading size={4} textColor="tertiary" caps>Design Frameworks</Heading>
+          <Layout>
+            <Fill>
+              <Link href="https://github.com/react-native-training/react-native-elements">
+                <Text>RN Elements</Text>
+              </Link>
+              <Image width="200px" src={images.rn_elements} />
+            </Fill>
+            <Fill>
+              <Link href="https://nativebase.io/">
+                <Text>NativeBase</Text>
+              </Link>
+              <Image width="200px" src={images.native_base} />
+            </Fill>
+            <Fill>
+              <Link href="https://akveo.github.io/react-native-ui-kitten/#/home">
+                <Text>UI Kitten</Text>
+              </Link>
+              <Image width="200px" src={images.ui_kitten} />
+            </Fill>
+          </Layout>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="primary"
@@ -247,7 +329,7 @@ export default class Presentation extends React.Component {
           <Heading size={4} textColor="tertiary" caps>Cross Platform UI</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary"
-          notes=""
+          notes="Users for each platform have different expectations and components will be displayed differently on each platform."
         >
           <Heading size={4} textColor="tertiary" caps>Android and iOS</Heading>
           <Image width="900px" src={images.iOSvAndroid} />
@@ -266,10 +348,12 @@ export default class Presentation extends React.Component {
         <Slide transition={["slide"]} bgColor="primary" textColor="primary"
           notes="Often overlooked. React Native has brought some awesome features from web development to the mobile realm."
         >
-          <Heading size={4} textColor="tertiary" caps>Performance</Heading>
-          <Text size={4} textColor="tertiary" caps>Navigation, Animcations, and User Interactions</Text>
+          <Heading size={1} textColor="tertiary" caps>Performance</Heading>
+          <Text size={4} textColor="secondary" caps>Navigation, Animations, and User Interactions</Text>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="primary">
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="The ideal situation is to eliminate all the passes over the bridge after initialization."
+        >
           <Heading size={4} textColor="secondary" caps>React Native Bridge</Heading>
           <Image width="740px" src={images.bridge} />
         </Slide>
@@ -287,41 +371,61 @@ export default class Presentation extends React.Component {
         <Slide transition={["slide"]} bgColor="primary" textColor="primary"
           notes="Often overlooked. React Native has brought some awesome features from web development to the mobile realm."
         >
-          <Heading size={4} textColor="tertiary" caps>Coding and Developer Experience</Heading>
+          <Heading size={2} textColor="tertiary" caps>Coding & Developer Experience</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary"
           notes=""
         >
-          <Heading size={4} textColor="secondary" caps>How to Get Started</Heading>
+          <Heading size={4} textColor="tertiary" caps>How to Get Started</Heading>
           <List ordered>
             <Appear><ListItem textColor="secondary">Install Xcode, Android Studio, <Code>react-native init</Code></ListItem></Appear>
             <Appear><ListItem textColor="secondary">snack.expo.io</ListItem></Appear>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary"
-          notes="Snack.expo.io"
+          notes="Snack.expo.io makes it so easy to prototype or get started. It also gives you a qr code to scan on your devices and it live updates. I use this to be able to prototype easily on multiple devices at the same time."
         >
           <Heading size={4} textColor="secondary" caps>snack.expo.io</Heading>
           <Image width="740px" src={images.expo} />
         </Slide>
-        
-        <Slide transition={["fade"]} bgColor="primary" textColor="primary">
-          <Heading size={4} textColor="secondary" caps>React Developer Tools</Heading>
-          <Image width="740px" src={images.bridge} />
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary"
+          notes="If you are running locally, there are also a lot of sweet features for building your apps. Chrome dev tools, hot/live reloading, inspect element features, performance monitoring for JS and Native."
+        >
+          <Heading size={4} textColor="tertiary" caps>Built in Devtooling</Heading>
+          <Layout>
+            <Fill>
+              <Image width="300px" src={images.devmenu} />
+            </Fill>
+            <Fill>
+              <Image width="300px" src={images.inspector} />
+            </Fill>
+          </Layout>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={4} textColor="secondary" caps>React Developer Tools</Heading>
-          <Image width="740px" src={images.bridge} />
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/devtools.txt')}
+            margin="20px 20px"
+            style={{fontSize: "22px"}}
+            overflow="overflow"
+          />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
+          <Heading size={4} textColor="secondary" caps>React Developer Tools</Heading>
+          <Image width="740px" src={images.devtools} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="set breakpoints, step through debugging..."
+        >
           <Heading size={4} textColor="secondary" caps>Debugging</Heading>
-          <Image width="740px" src={images.bridge} />
+          
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary" textColor="primary"
           notes=""
         >
-          <Heading size={4} textColor="tertiary" caps>Flexibility</Heading>
+          <Heading size={1} textColor="tertiary" caps>Flexibility</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={4} textColor="secondary" caps>Embedding Native Code</Heading>

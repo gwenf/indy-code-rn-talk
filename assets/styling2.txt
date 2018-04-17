@@ -1,0 +1,5 @@
+flex: 1 || 2...
+flexDirection: 'column'
+justifyContent: 'center'
+alignItems: 'center'
+flexWrap: 'wrap'

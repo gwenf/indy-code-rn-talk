@@ -1,0 +1,3 @@
+npm install --save-dev react-devtools
+// add “devtools”: “react-devtools” to npm scripts
+npm run devtools

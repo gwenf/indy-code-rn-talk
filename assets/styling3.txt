@@ -1,0 +1,4 @@
+color: '#f5f600'
+backgroundColor: 'blue'
+fontSize: 20
+fontFamily: 'Open Sans'
