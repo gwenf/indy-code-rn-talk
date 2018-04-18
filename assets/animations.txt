@@ -1,0 +1,8 @@
+Animated.timing(
+  this.state.flipValue,
+  {
+    toValue: 1,
+    duration: 1000,
+    easing: Easing.linear
+  }
+).start()

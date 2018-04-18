@@ -29,11 +29,13 @@ const preloader = (imageCollection) => {
 };
 
 const images = {
+  actions: require('../assets/actions.png'),
+  apple_terms: require('../assets/apple-terms.png'),
   logo: require('../assets/ios-logo-android.jpg'),
   reactTree: require('../assets/react-tree.png'),
   iOSvAndroidTabs: require('../assets/ios-v-android-tabs.png'),
   iOSvAndroid: require('../assets/ios-v-android.png'),
-  datetime: require('../assets/datetime-picker.png'),
+  datetime: require('../assets/datetimepicker.png'),
   bridge: require('../assets/bridge.png'),
   mobiledev: require('../assets/mobiledev.png'),
   expo: require('../assets/expo.png'),
@@ -48,7 +50,18 @@ const images = {
   devmenu: require('../assets/devmenu.png'),
   inspector: require('../assets/inspector.png'),
   chrome_debug: require('../assets/chrome_debug.png'),
-  decoide: require('../assets/decoide.png')
+  decoide: require('../assets/decoide.png'),
+  vscode_debug: require('../assets/vscode_debug.png'),
+  wix_logo: require('../assets/wix_logo.png'),
+  tesla_logo: require('../assets/tesla_logo.png'),
+  walmart_logo: require('../assets/walmart_logo.png'),
+  airbnb_logo: require('../assets/airbnb_logo.png'),
+  fb_logo: require('../assets/fb_logo.png'),
+  skype_logo: require('../assets/skype_logo.png'),
+  discord_logo: require('../assets/discord_logo.png'),
+  bloom_logo: require('../assets/bloom_logo.png'),
+  rn_performance: require('../assets/rn_performance.png'),
+  listviews: require('../assets/listviews.png')
 };
 
 preloader(images);
@@ -127,22 +140,22 @@ export default class Presentation extends React.Component {
           <Layout>
             <Fill>
               <List>
-                <ListItem textColor="secondary">Time</ListItem>
-                <ListItem textColor="secondary">Cost</ListItem>
-                <ListItem textColor="secondary">Maintainability</ListItem>
-                <ListItem textColor="secondary">Scalability</ListItem>
-                <ListItem textColor="secondary">Performance</ListItem>
-                <ListItem textColor="secondary">Ecosystem</ListItem>
+                <ListItem textSize={34} textColor="secondary">Time</ListItem>
+                <ListItem textSize={34} textColor="secondary">Cost</ListItem>
+                <ListItem textSize={34} textColor="secondary">Maintainability</ListItem>
+                <ListItem textSize={34} textColor="secondary">Scalability</ListItem>
+                <ListItem textSize={34} textColor="secondary">Performance</ListItem>
+                <ListItem textSize={34} textColor="secondary">Ecosystem</ListItem>
               </List>
             </Fill>
             <Fill>
               <List>
-                <ListItem textColor="secondary">Developer Experience</ListItem>
-                <ListItem textColor="secondary">Community</ListItem>
-                <ListItem textColor="secondary">Other Applications</ListItem>
-                <ListItem textColor="secondary">Developer Skillsets</ListItem>
-                <ListItem textColor="secondary">Deploying</ListItem>
-                <ListItem textColor="secondary">Testing</ListItem>
+                <ListItem textSize={34} textColor="secondary">Developer Experience</ListItem>
+                <ListItem textSize={34} textColor="secondary">Community</ListItem>
+                <ListItem textSize={34} textColor="secondary">Other Applications</ListItem>
+                <ListItem textSize={34} textColor="secondary">Developer Skillsets</ListItem>
+                <ListItem textSize={34} textColor="secondary">Deploying</ListItem>
+                <ListItem textSize={34} textColor="secondary">Testing</ListItem>
               </List>
             </Fill>
           </Layout>
@@ -161,7 +174,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="primary" textColor="primary"
           notes=""
         >
-          <Heading size={4} textColor="tertiary" caps>Native</Heading>
+          <Heading size={2} textColor="tertiary" caps>Native</Heading>
           <List>
             <ListItem textColor="secondary">Great UX</ListItem>
             <ListItem textColor="secondary">Native Feel</ListItem>
@@ -343,6 +356,12 @@ export default class Presentation extends React.Component {
           <Heading size={4} textColor="tertiary" caps>Menus</Heading>
           <Image width="700px" src={images.iOSvAndroidTabs} />
         </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes=""
+        >
+          <Heading size={4} textColor="tertiary" caps>Actions</Heading>
+          <Image width="580px" src={images.actions} />
+        </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={4} textColor="secondary" caps>Datetime Pickers</Heading>
           <Image width="550px" src={images.datetime} />
@@ -360,29 +379,60 @@ export default class Presentation extends React.Component {
           <Heading size={4} textColor="secondary" caps>React Native Bridge</Heading>
           <Image width="740px" src={images.bridge} />
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="primary">
-          <Heading size={4} textColor="secondary" caps>Performance</Heading>
-          <Image width="740px" src={images.bridge} />
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={4} textColor="tertiary" caps>Performance Monitor</Heading>
+          <Layout>
+            <Fill>
+              <Image width="300px" src={images.devmenu} />
+            </Fill>
+            <Fill>
+              <Image width="740px" src={images.rn_performance} />
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="React Native comes with an animations API with the option to declaritively run the animation without crossing the bridge."
+        >
+          <Heading size={4} textColor="tertiary" caps>Animations</Heading>
+          <Layout>
+            <Fill margin="20px">
+              <CodePane
+                lang="jsx"
+                source={require('raw-loader!../assets/animations.txt')}
+                margin="0 20px"
+                style={{fontSize: "22px"}}
+              />
+            </Fill>
+            <div style={{margin: '10px'}}></div>
+            <Fill margin="20px">
+              <CodePane
+                lang="jsx"
+                source={require('raw-loader!../assets/animations2.txt')}
+                margin="0 20px"
+                style={{fontSize: "22px"}}
+              />
+            </Fill>
+          </Layout>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary"
           notes="the native SDK’s for both operating systems, exist time-tested native list view implementations — UITableView for iOS and ListView for Android"
         >
-          <Heading size={4} textColor="secondary" caps>List Views</Heading>
-          <Image width="740px" src={images.bridge} />
+          <Heading size={4} textColor="tertiary" caps>List Views</Heading>
+          <Image width="740px" src={images.listviews} />
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary" textColor="primary"
           notes="Often overlooked. React Native has brought some awesome features from web development to the mobile realm."
         >
-          <Heading size={2} textColor="tertiary" caps>Coding & Developer Experience</Heading>
+          <Heading size={4} textColor="tertiary" caps>Coding & Developer Experience</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary"
-          notes=""
+          notes="with the init command, then you can run the app "
         >
-          <Heading size={4} textColor="tertiary" caps>How to Get Started</Heading>
+          <Heading size={3} textColor="tertiary" caps>Getting Started</Heading>
           <List ordered>
-            <Appear><ListItem textColor="secondary">Install Xcode, Android Studio, <Code>react-native init</Code></ListItem></Appear>
-            <Appear><ListItem textColor="secondary">snack.expo.io</ListItem></Appear>
+            <Appear><ListItem textSize={32} textColor="secondary">Install Xcode, Android Studio, <Code textSize={28}>react-native init</Code> <Code textSize={28}>react-native run-[platform]</Code></ListItem></Appear>
+            <Appear><ListItem textSize={32} textColor="secondary">snack.expo.io</ListItem></Appear>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary"
@@ -410,6 +460,12 @@ export default class Presentation extends React.Component {
             </Fill>
           </Layout>
         </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary"
+          notes="set breakpoints, step through debugging..."
+        >
+          <Heading size={3} textColor="tertiary" caps>Debugging</Heading>
+          <Image width="950px" src={images.chrome_debug} />
+        </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
           <Heading size={4} textColor="secondary" caps>React Developer Tools</Heading>
           <CodePane
@@ -420,15 +476,9 @@ export default class Presentation extends React.Component {
             overflow="overflow"
           />
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+        <Slide transition={["fade"]} bgColor="secondary" textColor="tertiary">
           <Heading size={4} textColor="tertiary" caps>React Developer Tools</Heading>
           <Image width="740px" src={images.devtools} />
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
-          notes="set breakpoints, step through debugging..."
-        >
-          <Heading size={4} textColor="secondary" caps>Debugging</Heading>
-          <Image width="740px" src={images.chrome_debug} />
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary" textColor="primary"
@@ -441,14 +491,14 @@ export default class Presentation extends React.Component {
           <CodePane
             lang="jsx"
             source={require('raw-loader!../assets/platformCustom.txt')}
-            margin="20px 20px"
+            margin="20px 0"
             style={{fontSize: "22px"}}
             overflow="overflow"
           />
           <CodePane
             lang="jsx"
             source={require('raw-loader!../assets/platformCustom2.txt')}
-            margin="20px 20px"
+            margin="20px 0"
             style={{fontSize: "22px"}}
             overflow="overflow"
           />
@@ -501,47 +551,65 @@ export default class Presentation extends React.Component {
             overflow="overflow"
           />
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="primary">
-          <Heading size={6} textColor="secondary" caps>Over the Air Updates</Heading>
-          <Text>Microsoft Code Push</Text>
-          <Image width="740px" src={images.bridge} />
+        <Slide transition={["fade"]} bgColor="secondary" textColor="tertiary">
+          <Heading size={6} textColor="primary" caps>Over the Air Updates</Heading>
+          <Text textColor="tertiary">Microsoft Code Push</Text>
+          <Image width="950px" src={images.apple_terms} />
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary" textColor="primary"
           notes="Great community, lots of companies developing this."
         >
-          <Heading size={4} textColor="tertiary" caps>Tools</Heading>
+          <Heading size={1} textColor="tertiary" caps>Tools</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
-          <Heading size={6} textColor="tertiary" caps>Deco</Heading>
-          <Image width="740px" src={images.decoide} />
+          <Heading size={2} textColor="tertiary" caps>Deco</Heading>
+          <Image width="940px" src={images.decoide} />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
-          <Heading size={6} textColor="secondary" caps>Plugins</Heading>
+          <Heading size={4} textColor="tertiary" caps>Plugins</Heading>
           <Text>VSCode, Sublime, Atom</Text>
-          <Image width="740px" src={images.bridge} />
+          <Image width="740px" src={images.vscode_debug} />
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary" textColor="primary"
-          notes="Great community, lots of companies developing this."
+          notes="You can look at things like installs, github stars, etc but the real question is, who is using this in production? Great community, lots of companies developing this."
         >
-          <Heading size={4} textColor="tertiary" caps>Community</Heading>
+          <Heading size={1} textColor="tertiary" caps>Community</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
-          <Heading size={6} textColor="secondary" caps>Who is using React Native?</Heading>
-          <List>
-            <ListItem textColor="secondary">Facebook</ListItem>
-            <ListItem textColor="secondary">Airbnb</ListItem>
-            <ListItem textColor="secondary">Wix</ListItem>
-            <ListItem textColor="secondary">Walmart</ListItem>
-            <ListItem textColor="secondary">Bloomberg</ListItem>
-            <ListItem textColor="secondary">Skype</ListItem>
-            <ListItem textColor="secondary">Tesla</ListItem>
-            <ListItem textColor="secondary">Discord</ListItem>
-          </List>
+          <Heading size={5} caps>Who is using React Native?</Heading>
+          <Layout>
+            <Fill>
+              <Image width="300px" src={images.fb_logo} />
+            </Fill>
+            <Fill>
+              <Image width="160px" src={images.wix_logo} />
+            </Fill>
+            <Fill>
+              <Image width="170px" src={images.walmart_logo} />
+            </Fill>
+            <Fill>
+              <Image width="190px" src={images.skype_logo} />
+            </Fill>
+          </Layout>
+          <Layout>
+            <Fill>
+              <Image width="200px" src={images.tesla_logo} />
+            </Fill>            
+            <Fill>
+              <Image width="200px" src={images.discord_logo} />
+            </Fill>
+            <Fill>
+              <Image width="360px" src={images.airbnb_logo} />
+            </Fill>
+            <Fill>
+              <Image width="260px" src={images.bloom_logo} />
+            </Fill>
+          </Layout>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
-          <Heading size={6} textColor="secondary" caps>Resource Links</Heading>
+          <Heading size={2} textColor="tertiary" caps>Resource Links</Heading>
           <List>
             <ListItem style={{fontSize: '32px'}} textColor="secondary"><Link href="https://react-native-training.github.io/react-native-elements/">React Native Elements</Link></ListItem>
             <ListItem style={{fontSize: '32px'}} textColor="secondary"><Link href="https://nativebase.io/">Native Base</Link></ListItem>
@@ -552,15 +620,16 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="primary">
-          <Heading size={6} textColor="secondary" caps>Up-to-date Information</Heading>
+          <Heading size={4} textColor="tertiary" caps>Up-to-date Information</Heading>
           <List>
             <ListItem textColor="secondary"><Link href="https://www.youtube.com/user/FacebookDevelopers/videos">Facebook Developers Channel</Link></ListItem>
             <ListItem textColor="secondary"><Link href="https://twitter.com/koltal">Tal Kol - Engineer at Wix</Link></ListItem>
             <ListItem textColor="secondary"><Link href="http://reactnative.cc/">React Native Newsletter</Link></ListItem>
+            <ListItem textColor="secondary"><Link href="https://facebook.github.io/react-native/showcase.html">Company Success Stories</Link></ListItem>
           </List>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={3} textColor="secondary" caps>Thanks!</Heading>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={3} textColor="primary" caps>Thanks!</Heading>
           <List>
             <ListItem textColor="secondary">Fusion Alliance</ListItem>
             <ListItem textColor="secondary"><Link href="https://www.meetup.com/Free-Code-Camp-Indy">freeCodeCampIndy</Link></ListItem>
@@ -569,13 +638,6 @@ export default class Presentation extends React.Component {
             <ListItem>gwenfaraday@gmail.com</ListItem>
           </List>
         </Slide>
-        {/* <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-        // I should put quotes from companies in here... I also need stats on how people use this framework and how successful they are...
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
-        </Slide> */}
       </Deck>
     );
   }
