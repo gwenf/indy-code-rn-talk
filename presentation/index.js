@@ -61,7 +61,8 @@ const images = {
   discord_logo: require('../assets/discord_logo.png'),
   bloom_logo: require('../assets/bloom_logo.png'),
   rn_performance: require('../assets/rn_performance.png'),
-  listviews: require('../assets/listviews.png')
+  listviews: require('../assets/listviews.png'),
+  dogscroll: require('../assets/dogscroll.gif')
 };
 
 preloader(images);
@@ -420,6 +421,12 @@ export default class Presentation extends React.Component {
           <Heading size={4} textColor="tertiary" caps>List Views</Heading>
           <Image width="740px" src={images.listviews} />
         </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="primary"
+          notes="animate based off of scroll position can be handled entirely in native, you will have to check perfomance if you are crossing the bridge with these. Also works well for drawer menus."
+        >
+          <Heading size={5} textColor="tertiary" caps>Scroll Animations</Heading>
+          <Image width="280px" src={images.dogscroll} />
+        </Slide>
 
         <Slide transition={["slide"]} bgColor="primary" textColor="primary"
           notes="Often overlooked. React Native has brought some awesome features from web development to the mobile realm."
@@ -615,6 +622,7 @@ export default class Presentation extends React.Component {
             <ListItem style={{fontSize: '32px'}} textColor="secondary"><Link href="https://nativebase.io/">Native Base</Link></ListItem>
             <ListItem style={{fontSize: '32px'}} textColor="secondary"><Link href="https://akveo.github.io/react-native-ui-kitten/#/home">UI Kitten</Link></ListItem>
             <ListItem style={{fontSize: '32px'}} textColor="secondary"><Link href="https://snack.expo.io/">Browser-based development - Expo Sketch</Link></ListItem>
+            <ListItem style={{fontSize: '32px'}} textColor="secondary"><Link href="https://github.com/bamlab/generator-rn-toolbox/blob/master/generators/assets/README.md">Asset Generator</Link></ListItem>
             <ListItem style={{fontSize: '32px'}} textColor="secondary">Flexbox Games - <Link href="https://flexboxfroggy.com/">Froggies</Link> and <Link href="http://www.flexboxdefense.com/">Tower Defense</Link></ListItem>
             <ListItem style={{fontSize: '32px'}} textColor="secondary"><Link href="https://github.com/jondot/ReactNativeKatas">Learn React Native with Katas!</Link></ListItem>
           </List>
